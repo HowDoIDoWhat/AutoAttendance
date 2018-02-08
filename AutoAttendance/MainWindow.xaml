@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Label Content="Auto Attendance" HorizontalAlignment="Left" Margin="105,33,0,0" VerticalAlignment="Top" Height="59" Width="300" FontSize="36" FontWeight="Bold"/>
+
+        <Button Content="Attendance Manager" HorizontalAlignment="Left" Margin="178,125,0,0" VerticalAlignment="Top" Width="159" IsCancel="True"/>
+        <Button Content="Options" HorizontalAlignment="Left" Margin="216,165,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Help" HorizontalAlignment="Left" Margin="216,210,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="216,249,0,0" VerticalAlignment="Top" Width="75"/>
+
     </Grid>
 </Window>
