@@ -25,21 +25,33 @@ namespace AutoAttendance
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OneWindow win2 = new OneWindow();
+            win2.Show();
+            this.Close();
+        }
+
+
     }
+
+
 
     public class Class
     {
         String className, classSemester;
-        int classSize;
+        int classSize = 0;
+        Student[] Roster;
         
-        public void AddStudent()
+        public void AddStudent(Student s)
         {
-            //todo
+            Roster[classSize] = s;
+            this.classSize++;
         }
 
-        public void RemoveStudent()
+        public void RemoveStudent(Student s)
         {
-            //todo
+            
         }
 
         public void LoadClass()
@@ -59,8 +71,9 @@ namespace AutoAttendance
     }
 
     public class Student
-    { 
-        String sutdentName, year;
+    {
+        String name, year;
+        double gpa, attendance;
         int[] attedance;
         Image profile;
         Image[] pictureList;
@@ -78,6 +91,30 @@ namespace AutoAttendance
         public void SetProfile()
         {
             // todo
+        }
+
+        public void DeleteProfile()
+        {
+            this. = null;
+        }
+
+        public void UpdateInfo(string info, string data)
+            // info: name, year, gpa
+        {
+            if (info == "name")
+            {
+                this.name = data;
+            }
+            
+            if (info == "year")
+            {
+                this.year = data;
+            }
+
+            if (info == "gpa")
+            {
+                this.gpa = Convert.ToDouble(data);
+            }
         }
 
     }

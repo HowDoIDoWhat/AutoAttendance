@@ -1,0 +1,25 @@
+﻿<Window x:Class="AutoAttendance.OneWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoAttendance"
+        mc:Ignorable="d"
+        Title="OneWindow" Height="600" Width="800">
+    <Grid>
+        <DatePicker HorizontalAlignment="Left" Height="30" Margin="44,53,0,0" VerticalAlignment="Top" Width="106"/>
+        <Image HorizontalAlignment="Left" Height="180" Margin="44,115,0,0" VerticalAlignment="Top" Width="272"/>
+        <ContentControl x:Name="testCC" HorizontalAlignment="Left" Margin="562,53,0,0" VerticalAlignment="Top" Height="242" Width="196" Content="All Classes Here"/>
+        <Label Content="Date Picture Here" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,318,0,0" Width="130"/>
+        <Button Content="Add Photo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="44,349,0,0"/>
+        <Button Content="Remove Photo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="150,349,0,0"/>
+        <ContentControl Content="Class Info On [date]" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="367,102,0,0" Height="211" Width="114"/>
+        <Button Content="Manual Entry" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="342,349,0,0" Click="Button_Click"/>
+        <ContentControl Content="Selected Student Info" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="538,374,0,0" Height="153" Width="220"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="44,387,0,0" Height="52" Width="272"><Run Text="Notes for class on [date]"/><LineBreak/><Run Text="Possible statistics? "/><LineBreak/><Run/></TextBlock>
+        <Button Content="Add Class" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="562,321,0,0"/>
+        <Button Content="Modify Class" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="659,321,0,0"/>
+        <Button Content="Edit Students" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="435,349,0,0" Click="Button_Click"/>
+        <Button Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,10,0,0"/>
+    </Grid>
+</Window>
