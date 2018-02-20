@@ -26,4 +26,53 @@ namespace AutoAttendance
         }
 
     }
+
+    public class CurrentClass
+    {
+        String name, semester, other;
+        int classSize;
+        bool[] attendance;
+        Date day;
+        List<Image> picture = new List<Image>; 
+
+        public void ChangeName(String name)
+        {
+            this.name = name;
+        }
+
+        public void ChangeSemester(String semester)
+        {
+            this.semester = semester;
+        }
+
+        public void ChangeOther(String other)
+        {
+            this.other = other;
+        }
+
+        public void ChangeDate(Date day)
+        {
+            this.day = day;
+        }
+
+        public void UploadImage(Image image)
+        {
+            picture.Add(image);
+        }
+
+        public void RemoveImage(Image i)
+        {
+            picture.Remove(i);
+
+        }
+
+    }
+
+    public class OndDate
+    {
+        Dictionary<Date, Image[]> datePictures = new Dictionary<Date, Image[]>();
+        Dictionary<Student, Boolean> StudentAttendance = new Dictionary<Student, Boolean>();
+    }
+            
+
 }

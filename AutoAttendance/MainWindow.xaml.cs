@@ -88,14 +88,14 @@ namespace AutoAttendance
             // todo
         }
 
-        public void SetProfile()
+        public void SetProfile(Image i)
         {
-            // todo
+            this.profile = i;
         }
 
         public void DeleteProfile()
         {
-            this. = null;
+            this.profile = null;
         }
 
         public void UpdateInfo(string info, string data)
