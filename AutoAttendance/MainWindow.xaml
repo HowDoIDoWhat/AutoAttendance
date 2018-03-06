@@ -9,10 +9,10 @@
     <Grid>
         <Label Content="Auto Attendance" HorizontalAlignment="Left" Margin="105,33,0,0" VerticalAlignment="Top" Height="59" Width="300" FontSize="36" FontWeight="Bold"/>
 
-        <Button Content="Attendance Manager" HorizontalAlignment="Left" Margin="178,125,0,0" VerticalAlignment="Top" Width="159" IsCancel="True" Click="Button_Click"/>
-        <Button Content="Options" HorizontalAlignment="Left" Margin="216,165,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Help" HorizontalAlignment="Left" Margin="216,210,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="216,249,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Attendance Manager" HorizontalAlignment="Left" Margin="178,125,0,0" VerticalAlignment="Top" Width="159" IsCancel="True" Click="LoadAutoAttendanceButton"/>
+        <Button Content="Options" HorizontalAlignment="Left" Margin="216,165,0,0" VerticalAlignment="Top" Width="75" Click="HandleOptionsButton"/>
+        <Button Content="Help" HorizontalAlignment="Left" Margin="216,210,0,0" VerticalAlignment="Top" Width="75" Click="HandleHelpButton"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="216,249,0,0" VerticalAlignment="Top" Width="75" Click="HandleExitButton"/>
 
     </Grid>
 </Window>

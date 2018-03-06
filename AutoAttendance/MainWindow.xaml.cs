@@ -25,135 +25,27 @@ namespace AutoAttendance
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void LoadAutoAttendanceButton(object sender, RoutedEventArgs e)
         {
             OneWindow win2 = new OneWindow();
             win2.Show();
             this.Close();
         }
 
-
-    }
-
-
-
-    public class Class
-    {
-        String className, classSemester;
-        int classSize = 0;
-        Student[] Roster;
-        
-        public void AddStudent(Student s)
+        private void HandleExitButton(object sender, RoutedEventArgs e)
         {
-            Roster[classSize] = s;
-            this.classSize++;
+            //exit
         }
 
-        public void RemoveStudent(Student s)
+        private void HandleOptionsButton(object sender, RoutedEventArgs e)
         {
-            
+            //load options menu
         }
 
-        public void LoadClass()
+        private void HandleHelpButton(object sender, RoutedEventArgs e)
         {
-            //todo
+            // load help menu
         }
-
-        public void SaveClass()
-        {
-            //todo
-        }
-
-        public void EditClass()
-        {
-            // todo
-        }
-    }
-
-    public class Student
-    {
-        String name, year;
-        double gpa, attendance;
-        int[] attedance;
-        Image profile;
-        Image[] pictureList;
-
-        public void AddImage()
-        {
-            // todo
-        }
-
-        public void RemoveImage()
-        {
-            // todo
-        }
-
-        public void SetProfile(Image i)
-        {
-            this.profile = i;
-        }
-
-        public void DeleteProfile()
-        {
-            this.profile = null;
-        }
-
-        public void UpdateInfo(string info, string data)
-            // info: name, year, gpa
-        {
-            if (info == "name")
-            {
-                this.name = data;
-            }
-            
-            if (info == "year")
-            {
-                this.year = data;
-            }
-
-            if (info == "gpa")
-            {
-                this.gpa = Convert.ToDouble(data);
-            }
-        }
-
-    }
-
-    public class Date
-    {
-        String Day;
-        int[] Attednance;
-        Image[] today;
-
-        public void UploadImage()
-        {
-            //todo
-        }
-
-        public void DeleteImage()
-        {
-            //todo
-        }
-
-    }
-
-    public class HandleImages
-    {
-        public void UploadImage()
-        {
-            // todo
-        }
-
-        public void GetImage()
-        {
-            // todo
-        }
-
-        public void DeleteImage()
-        {
-            // todo
-        }
-
     }
 
 }

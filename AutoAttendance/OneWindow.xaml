@@ -5,21 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoAttendance"
         mc:Ignorable="d"
-        Title="OneWindow" Height="600" Width="800">
+        Title="Auto Attendance" Height="450" Width="800">
     <Grid>
-        <DatePicker HorizontalAlignment="Left" Height="30" Margin="44,53,0,0" VerticalAlignment="Top" Width="106"/>
-        <Image HorizontalAlignment="Left" Height="180" Margin="44,115,0,0" VerticalAlignment="Top" Width="272"/>
-        <ContentControl x:Name="testCC" HorizontalAlignment="Left" Margin="562,53,0,0" VerticalAlignment="Top" Height="242" Width="196" Content="All Classes Here"/>
-        <Label Content="Date Picture Here" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,318,0,0" Width="130"/>
-        <Button Content="Add Photo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="44,349,0,0"/>
-        <Button Content="Remove Photo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="150,349,0,0"/>
-        <ContentControl Content="Class Info On [date]" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="367,102,0,0" Height="211" Width="114"/>
-        <Button Content="Manual Entry" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="342,349,0,0" Click="Button_Click"/>
-        <ContentControl Content="Selected Student Info" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="538,374,0,0" Height="153" Width="220"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="44,387,0,0" Height="52" Width="272"><Run Text="Notes for class on [date]"/><LineBreak/><Run Text="Possible statistics? "/><LineBreak/><Run/></TextBlock>
-        <Button Content="Add Class" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="562,321,0,0"/>
-        <Button Content="Modify Class" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="659,321,0,0"/>
-        <Button Content="Edit Students" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="435,349,0,0" Click="Button_Click"/>
-        <Button Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,10,0,0"/>
+        <DatePicker x:Name="DateSelector" HorizontalAlignment="Left" Height="30" Margin="158,10,0,0" VerticalAlignment="Top" Width="106" CalendarClosed="DateChanged"/>
+        <Border HorizontalAlignment="Left" VerticalAlignment="Top"  BorderBrush="Black" BorderThickness="2" Margin="10,91,0,0">
+            <Image HorizontalAlignment="Left" Height="135" Margin="5,5,5,75" VerticalAlignment="Top" Width="240" Source="Images/c2.jpg"/>
+        </Border>
+        <Label x:Name="CurrentDateLabel" Content="Images for [Date]" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,60,0,0" Width="130"/>
+        <Button Content="Add Photo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="10,327,0,0" Click="HandleAddPhotoButton"/>
+        <Button Content="Remove Photo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="164,327,0,0" Click="HandleRemoveImageButton"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="19,238,0,0" Height="77" Width="272"><Run Text="X Faces Detected."/><LineBreak/><Run Text="Y Faces Recognized."/><LineBreak/><Run Text="Z Faces Unrecognized."/></TextBlock>
+        <Button Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,10,0,0" Click="ReturnToMainMenuButton"/>
+        <Border HorizontalAlignment="Left" VerticalAlignment="Top"  BorderBrush="Black" BorderThickness="2" Height="232" Margin="536,81,0,0" Width="246">
+            <Grid HorizontalAlignment="Center" Margin="7,7,6,7">
+                <Border BorderBrush="Black" BorderThickness="1" Margin="0,28,115,70">
+                    <Image HorizontalAlignment="Left" Height="100" Margin="5,5,0,0" VerticalAlignment="Top" Width="100" Source="Images/t1.png"/>
+                </Border>
+                <Button x:Name="EditStudentButton" Content="Edit" HorizontalAlignment="Left" Height="28" Margin="154,176,0,0" VerticalAlignment="Top" Width="64" Click="HandleEditStudentInformationButton"/>
+                <TextBox x:Name="StudentNameTextBox" HorizontalAlignment="Left" Height="23" Margin="128,37,0,0" TextWrapping="Wrap" Text="Student Name" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
+                <TextBox x:Name="StudentIDTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Student ID" VerticalAlignment="Top" Width="100" Margin="128,65,0,0" IsEnabled="False"/>
+                <TextBox x:Name="StudentYearTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Margin="128,93,0,0" Text="Year" IsEnabled="False"/>
+                <TextBox x:Name="StudentAttendanceTextBox" HorizontalAlignment="Left" Height="23" Margin="128,121,0,0" TextWrapping="Wrap" Text="Attendance%" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
+                <Button x:Name="ChangeStudentImageButton" Content="Change Image" HorizontalAlignment="Left" Height="28" Margin="0,176,0,0" VerticalAlignment="Top" Width="90" Click="HandleChangeProfileButton"/>
+                <TextBox x:Name="StudentClassNameTextBox" HorizontalAlignment="Left" Height="23" Margin="65,0,0,0" TextWrapping="Wrap" Text="Class Name" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+                <CheckBox x:Name="StudentpresentCheckBox" Content="Present" HorizontalAlignment="Left" Height="22" Margin="10,149,0,0" VerticalAlignment="Top" Width="80"/>
+            </Grid>
+        </Border>
+        <Grid HorizontalAlignment="Left" Height="308" Margin="282,81,0,0" VerticalAlignment="Top" Width="237">
+            <TextBox x:Name="ClassNameTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Class Name" VerticalAlignment="Top" Width="90" Margin="137,11,0,0" IsEnabled="False"/>
+            <TextBox x:Name="ClassCRNTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="CRN" VerticalAlignment="Top" Width="90" Margin="137,38,0,0" IsEnabled="False"/>
+            <TreeView HorizontalAlignment="Left" Height="192" Margin="10,10,0,0" VerticalAlignment="Top" Width="122">
+                <TreeViewItem Header="Class 1" Height="75" Width="102" IsExpanded="True">
+                    <TreeViewItem Header="Student1&#xA;" HorizontalAlignment="Left" Height="19" Width="81"/>
+                    <TreeViewItem Header="Student2&#xD;&#xA;" HorizontalAlignment="Left" Height="100" Width="83"/>
+                </TreeViewItem>
+                <TreeViewItem Header="Class2&#xA;" Height="100" Width="100" IsExpanded="True">
+                    <TreeViewItem Header="Student1" HorizontalAlignment="Left" Height="100" Width="81"/>
+                </TreeViewItem>
+            </TreeView>
+            <TextBox x:Name="ClassSemesterTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Semester" VerticalAlignment="Top" Width="90" Margin="137,66,0,0" IsEnabled="False"/>
+            <Button Content="Add Class" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="25,216,0,0" Click="HandleAddClassButton"/>
+            <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="25,251,0,0" Click="HandleRemoveClassButton"/>
+            <Button x:Name="EditClassButton" Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="152,216,0,0" Click="HandleEditClassButton"/>
+            <Button Content="All Classes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="152,251,0,0" Click="HandleManualEntryButton"/>
+            <TextBox x:Name="ClassSizeTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Class Size" VerticalAlignment="Top" Width="90" Margin="137,94,0,0" IsEnabled="False"/>
+        </Grid>
+        <Button Content="Count Attendace" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="10,352,0,0" Click="HandleCountAttendanceButton"/>
+        <Button Content="Edit Attendance" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="164,352,0,0" Click="HandleEditAttendacneButton"/>
+        <Label Content="Student Information" HorizontalAlignment="Left" Height="26" Margin="603,34,0,0" VerticalAlignment="Top" Width="138"/>
+        <Label Content="Class Information" HorizontalAlignment="Left" Height="26" Margin="333,34,0,0" VerticalAlignment="Top" Width="138"/>
+
     </Grid>
 </Window>
